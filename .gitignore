@@ -1,0 +1,8 @@
+*.deb
+local-mode-cache
+.vagrant
+nodes
+chef_guid
+*.log
+vendored_cookbook
+.git
