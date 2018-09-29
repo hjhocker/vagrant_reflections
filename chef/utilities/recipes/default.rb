@@ -54,9 +54,9 @@ end
 
 template '/etc/postgresql/9.6/main/postgresql.conf' do
   source 'postgresql.conf.erb'
-  owner 'root'
-  group 'root'
-  mode '0755'
+  owner 'postgres'
+  group 'postgres'
+  mode '0644'
 end
 
 service "postgresql" do
