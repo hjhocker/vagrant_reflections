@@ -8,7 +8,7 @@ execute 'update synaptic' do
   command 'apt-get update'
 end
 
-['vim', 'nano', 'wget', 'curl', 'libcurl3', 'nginx', 'zsh', 'htop', 'git', 'jq', 'maven', 'tree', 'gcc', 'rsync', 'unzip', 'build-essential', 'libssl-dev', 'python', 'ucommon-utils', 'r-base-core'].each do |pkg|
+['vim', 'nano', 'wget', 'libcurl3', 'nginx', 'zsh', 'htop', 'git', 'jq', 'maven', 'tree', 'gcc', 'rsync', 'unzip', 'build-essential', 'libssl-dev', 'python', 'ucommon-utils', 'r-base-core', 'curl'].each do |pkg|
   package pkg do
     action :install
   end
@@ -59,6 +59,6 @@ template '/etc/postgresql/9.6/main/postgresql.conf' do
   mode '0755'
 end
 
-# execute 'install r packages' do
-#   command 'install.packages("slidify")'
-# end
+execute 'install nodejs' do
+  command '/vagrant/nodejs.sh'
+end
