@@ -3,19 +3,19 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-#
-# execute 'update synaptic' do
-#   command 'apt-get update'
-# end
-#
-# ['vim', 'nano', 'wget', 'curl', 'libcurl3', 'nginx', 'zsh', 'htop', 'git', 'jq', 'maven', 'tree', 'gcc', 'rsync', 'unzip', 'build-essential', 'libssl-dev', 'python'].each do |pkg|
-#   package pkg do
-#     action :install
-#   end
-# end
-#
-# include_recipe 'java::default'
-# include_recipe 'gradle::default'
+
+execute 'update synaptic' do
+  command 'apt-get update'
+end
+
+['vim', 'nano', 'wget', 'curl', 'libcurl3', 'nginx', 'zsh', 'htop', 'git', 'jq', 'maven', 'tree', 'gcc', 'rsync', 'unzip', 'build-essential', 'libssl-dev', 'python', 'ucommon-utils', 'r-base-core'].each do |pkg|
+  package pkg do
+    action :install
+  end
+end
+
+include_recipe 'java::default'
+include_recipe 'gradle::default'
 
 postgresql_server_install 'My Postgresql Server install' do
   action :install
@@ -56,9 +56,9 @@ template '/etc/postgresql/9.6/main/postgresql.conf' do
   source 'postgresql.conf.erb'
   owner 'postgres'
   group 'postgres'
-  mode '0644'
+  mode '0755'
 end
 
-service "postgresql" do
-  action :restart
-end
+# execute 'install r packages' do
+#   command 'install.packages("slidify")'
+# end
