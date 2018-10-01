@@ -2,7 +2,7 @@
 
 rootz=$(pwd)
 rm -rvf /vagrant/vendored_cookbook
-mkdir /vagrant/vendored_cookbook
+mkdir -p /vagrant/vendored_cookbook
 cd /vagrant/chef/
 
 for cb in $(ls)
