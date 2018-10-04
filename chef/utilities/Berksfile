@@ -1,8 +1,0 @@
-# frozen_string_literal: true
-source 'https://supermarket.chef.io'
-
-cookbook 'java', '~> 2.2.0'
-cookbook 'gradle', '~> 1.5.1'
-cookbook 'postgresql', '~> 7.1.1'
-
-metadata
