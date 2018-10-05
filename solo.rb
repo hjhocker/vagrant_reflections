@@ -1,1 +1,1 @@
-cookbook_path ['/vagrant/vendored_cookbook']
+cookbook_path ['/software/chef_solo/vendored_cookbooks']
